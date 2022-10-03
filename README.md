@@ -11,4 +11,4 @@
 
 Используемые технологии:
 Backend - ASP.NET Core
-Frontend - React.JS + Redux.JS
+Frontend - React.JS
