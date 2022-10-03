@@ -3,3 +3,7 @@
 ################################################################################
 
 /src/VtbMatrix/VtbMatrix/obj
+/src/VtbMatrix/VtbMatrix/bin/Debug/netcoreapp3.1
+/src/VtbMatrix/.vs/VtbMatrix
+/src/.vs
+/src/VtbMatrix/VtbMatrix/ClientApp/node_modules
