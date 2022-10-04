@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using VtbMatrix.Models;
+using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
 
 namespace VtbMatrix
 {
@@ -21,12 +24,23 @@ namespace VtbMatrix
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<VtbMatrixDbContext>(opts =>
+            {
+                opts.UseSqlServer(Configuration["ConnectionString:VtbMatrixConnection"]);
+            });
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            // services.AddScoped<IGenericRepository<HistoryLine>, EFGenericRepository<HistoryLine>>();
+            // services.AddScoped<IGenericRepository<NewsItem>, EFGenericRepository<NewsItem>>();
+            // services.AddScoped<IGenericRepository<NftCertificate>, EFGenericRepository<NftCertificate>>();
+            // services.AddScoped<IGenericRepository<Product>, EFGenericRepository<Product>>();
+            // services.AddScoped<IGenericRepository<Quest>, EFGenericRepository<Quest>>();
+            // services.AddScoped<IGenericRepository<User>, EFGenericRepository<User>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
