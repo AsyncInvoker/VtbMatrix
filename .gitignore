@@ -7,3 +7,5 @@
 /src/VtbMatrix/.vs/VtbMatrix
 /src/.vs
 /src/VtbMatrix/VtbMatrix/ClientApp/node_modules
+/src/VtbMatrix/VtbMatrix.Tests/obj
+/src/VtbMatrix/VtbMatrix.Tests/bin/Debug/netcoreapp3.1
